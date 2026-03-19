@@ -1,0 +1,511 @@
+
+--- Run 1/18 ---
+{
+  "run_id": 1,
+  "A_Storage_Mode": "Parquet",
+  "B_ID_Type": "Sequential_INTEGER",
+  "C_Row_Group_Size": 32000,
+  "D_Threads": 1,
+  "E_Index_Strategy": "No_Index",
+  "F_Compression": "Snappy",
+  "G_Key_Distribution": "Uniform"
+}
+  Generating dataset for Run 1...
+  Running benchmark for Run 1...
+    Query: point_lookup
+    Query: range_query
+    Query: aggregation
+    Query: join
+    Query: window
+
+--- Run 2/18 ---
+{
+  "run_id": 2,
+  "A_Storage_Mode": "Parquet",
+  "B_ID_Type": "Sequential_INTEGER",
+  "C_Row_Group_Size": 128000,
+  "D_Threads": 4,
+  "E_Index_Strategy": "Index_On_Load",
+  "F_Compression": "ZSTD",
+  "G_Key_Distribution": "Zipf"
+}
+  Generating dataset for Run 2...
+  Running benchmark for Run 2...
+    Query: point_lookup
+    Query: range_query
+    Query: aggregation
+    Query: join
+    Query: window
+
+--- Run 3/18 ---
+{
+  "run_id": 3,
+  "A_Storage_Mode": "Parquet",
+  "B_ID_Type": "Sequential_INTEGER",
+  "C_Row_Group_Size": 512000,
+  "D_Threads": 8,
+  "E_Index_Strategy": "Index_On_Demand",
+  "F_Compression": "None",
+  "G_Key_Distribution": "Empirical"
+}
+  Generating dataset for Run 3...
+  Running benchmark for Run 3...
+    Query: point_lookup
+    Query: range_query
+    Query: aggregation
+    Query: join
+    Query: window
+
+--- Run 4/18 ---
+{
+  "run_id": 4,
+  "A_Storage_Mode": "Parquet",
+  "B_ID_Type": "UUIDv4",
+  "C_Row_Group_Size": 32000,
+  "D_Threads": 4,
+  "E_Index_Strategy": "Index_On_Demand",
+  "F_Compression": "None",
+  "G_Key_Distribution": "Empirical"
+}
+  Generating dataset for Run 4...
+  Running benchmark for Run 4...
+    Query: point_lookup
+    Query: range_query
+    Query: aggregation
+    Query: join
+    Query: window
+
+--- Run 5/18 ---
+{
+  "run_id": 5,
+  "A_Storage_Mode": "Parquet",
+  "B_ID_Type": "UUIDv4",
+  "C_Row_Group_Size": 128000,
+  "D_Threads": 8,
+  "E_Index_Strategy": "No_Index",
+  "F_Compression": "Snappy",
+  "G_Key_Distribution": "Uniform"
+}
+  Generating dataset for Run 5...
+  Running benchmark for Run 5...
+    Query: point_lookup
+    Query: range_query
+    Query: aggregation
+    Query: join
+    Query: window
+
+--- Run 6/18 ---
+{
+  "run_id": 6,
+  "A_Storage_Mode": "Parquet",
+  "B_ID_Type": "UUIDv4",
+  "C_Row_Group_Size": 512000,
+  "D_Threads": 1,
+  "E_Index_Strategy": "Index_On_Load",
+  "F_Compression": "ZSTD",
+  "G_Key_Distribution": "Zipf"
+}
+  Generating dataset for Run 6...
+  Running benchmark for Run 6...
+    Query: point_lookup
+    Query: range_query
+    Query: aggregation
+    Query: join
+    Query: window
+
+--- Run 7/18 ---
+{
+  "run_id": 7,
+  "A_Storage_Mode": "Parquet",
+  "B_ID_Type": "UUIDv7",
+  "C_Row_Group_Size": 32000,
+  "D_Threads": 8,
+  "E_Index_Strategy": "Index_On_Load",
+  "F_Compression": "None",
+  "G_Key_Distribution": "Zipf"
+}
+  Generating dataset for Run 7...
+  Running benchmark for Run 7...
+    Query: point_lookup
+    Query: range_query
+    Query: aggregation
+    Query: join
+    Query: window
+
+--- Run 8/18 ---
+{
+  "run_id": 8,
+  "A_Storage_Mode": "Parquet",
+  "B_ID_Type": "UUIDv7",
+  "C_Row_Group_Size": 128000,
+  "D_Threads": 1,
+  "E_Index_Strategy": "Index_On_Demand",
+  "F_Compression": "Snappy",
+  "G_Key_Distribution": "Empirical"
+}
+  Generating dataset for Run 8...
+  Running benchmark for Run 8...
+    Query: point_lookup
+    Query: range_query
+    Query: aggregation
+    Query: join
+    Query: window
+
+--- Run 9/18 ---
+{
+  "run_id": 9,
+  "A_Storage_Mode": "Parquet",
+  "B_ID_Type": "UUIDv7",
+  "C_Row_Group_Size": 512000,
+  "D_Threads": 4,
+  "E_Index_Strategy": "No_Index",
+  "F_Compression": "ZSTD",
+  "G_Key_Distribution": "Uniform"
+}
+  Generating dataset for Run 9...
+  Running benchmark for Run 9...
+    Query: point_lookup
+    Query: range_query
+    Query: aggregation
+    Query: join
+    Query: window
+
+--- Run 10/18 ---
+{
+  "run_id": 10,
+  "A_Storage_Mode": "Materialized",
+  "B_ID_Type": "Sequential_INTEGER",
+  "C_Row_Group_Size": 32000,
+  "D_Threads": 8,
+  "E_Index_Strategy": "Index_On_Demand",
+  "F_Compression": "ZSTD",
+  "G_Key_Distribution": "Uniform"
+}
+  Generating dataset for Run 10...
+  Running benchmark for Run 10...
+    Mode: Materialized. Ingesting Parquet...
+    Index: Lazy (On Demand). Building index now...
+    Query: point_lookup
+    Query: range_query
+    Query: aggregation
+    Query: join
+    Query: window
+
+--- Run 11/18 ---
+{
+  "run_id": 11,
+  "A_Storage_Mode": "Materialized",
+  "B_ID_Type": "Sequential_INTEGER",
+  "C_Row_Group_Size": 128000,
+  "D_Threads": 1,
+  "E_Index_Strategy": "No_Index",
+  "F_Compression": "None",
+  "G_Key_Distribution": "Zipf"
+}
+  Generating dataset for Run 11...
+  Running benchmark for Run 11...
+    Mode: Materialized. Ingesting Parquet...
+    Query: point_lookup
+    Query: range_query
+    Query: aggregation
+    Query: join
+    Query: window
+
+--- Run 12/18 ---
+{
+  "run_id": 12,
+  "A_Storage_Mode": "Materialized",
+  "B_ID_Type": "Sequential_INTEGER",
+  "C_Row_Group_Size": 512000,
+  "D_Threads": 4,
+  "E_Index_Strategy": "Index_On_Load",
+  "F_Compression": "Snappy",
+  "G_Key_Distribution": "Empirical"
+}
+  Generating dataset for Run 12...
+  Running benchmark for Run 12...
+    Mode: Materialized. Ingesting Parquet...
+    Index: Eager (On Load). Building index now...
+    Query: point_lookup
+    Query: range_query
+    Query: aggregation
+    Query: join
+    Query: window
+
+--- Run 13/18 ---
+{
+  "run_id": 13,
+  "A_Storage_Mode": "Materialized",
+  "B_ID_Type": "UUIDv4",
+  "C_Row_Group_Size": 32000,
+  "D_Threads": 1,
+  "E_Index_Strategy": "Index_On_Load",
+  "F_Compression": "Snappy",
+  "G_Key_Distribution": "Empirical"
+}
+  Generating dataset for Run 13...
+  Running benchmark for Run 13...
+    Mode: Materialized. Ingesting Parquet...
+    Index: Eager (On Load). Building index now...
+    Query: point_lookup
+    Query: range_query
+    Query: aggregation
+    Query: join
+    Query: window
+
+--- Run 14/18 ---
+{
+  "run_id": 14,
+  "A_Storage_Mode": "Materialized",
+  "B_ID_Type": "UUIDv4",
+  "C_Row_Group_Size": 128000,
+  "D_Threads": 4,
+  "E_Index_Strategy": "Index_On_Demand",
+  "F_Compression": "ZSTD",
+  "G_Key_Distribution": "Uniform"
+}
+  Generating dataset for Run 14...
+  Running benchmark for Run 14...
+    Mode: Materialized. Ingesting Parquet...
+    Index: Lazy (On Demand). Building index now...
+    Query: point_lookup
+    Query: range_query
+    Query: aggregation
+    Query: join
+    Query: window
+
+--- Run 15/18 ---
+{
+  "run_id": 15,
+  "A_Storage_Mode": "Materialized",
+  "B_ID_Type": "UUIDv4",
+  "C_Row_Group_Size": 512000,
+  "D_Threads": 8,
+  "E_Index_Strategy": "No_Index",
+  "F_Compression": "None",
+  "G_Key_Distribution": "Zipf"
+}
+  Generating dataset for Run 15...
+  Running benchmark for Run 15...
+    Mode: Materialized. Ingesting Parquet...
+    Query: point_lookup
+    Query: range_query
+    Query: aggregation
+    Query: join
+    Query: window
+
+--- Run 16/18 ---
+{
+  "run_id": 16,
+  "A_Storage_Mode": "Materialized",
+  "B_ID_Type": "UUIDv7",
+  "C_Row_Group_Size": 32000,
+  "D_Threads": 4,
+  "E_Index_Strategy": "No_Index",
+  "F_Compression": "ZSTD",
+  "G_Key_Distribution": "Empirical"
+}
+  Generating dataset for Run 16...
+  Running benchmark for Run 16...
+    Mode: Materialized. Ingesting Parquet...
+    Query: point_lookup
+    Query: range_query
+    Query: aggregation
+    Query: join
+    Query: window
+
+--- Run 17/18 ---
+{
+  "run_id": 17,
+  "A_Storage_Mode": "Materialized",
+  "B_ID_Type": "UUIDv7",
+  "C_Row_Group_Size": 128000,
+  "D_Threads": 8,
+  "E_Index_Strategy": "Index_On_Load",
+  "F_Compression": "None",
+  "G_Key_Distribution": "Uniform"
+}
+  Generating dataset for Run 17...
+  Running benchmark for Run 17...
+    Mode: Materialized. Ingesting Parquet...
+    Index: Eager (On Load). Building index now...
+    Query: point_lookup
+    Query: range_query
+    Query: aggregation
+    Query: join
+    Query: window
+
+--- Run 18/18 ---
+{
+  "run_id": 18,
+  "A_Storage_Mode": "Materialized",
+  "B_ID_Type": "UUIDv7",
+  "C_Row_Group_Size": 512000,
+  "D_Threads": 1,
+  "E_Index_Strategy": "Index_On_Demand",
+  "F_Compression": "Snappy",
+  "G_Key_Distribution": "Zipf"
+}
+  Generating dataset for Run 18...
+  Running benchmark for Run 18...
+    Mode: Materialized. Ingesting Parquet...
+    Index: Lazy (On Demand). Building index now...
+    Query: point_lookup
+    Query: range_query
+    Query: aggregation
+    Query: join
+    Query: window
+
+================================================================================
+Starting Statistical Analysis
+================================================================================
+
+--- Analysis for Workload: aggregation ---
+
+  ANOVA for Response: latency_ms_sn (Higher is better)
+                           sum_sq   df          F    PR(>F)
+C(A_Storage_Mode)      196.309845  1.0  24.545276  0.007737
+C(B_ID_Type)             7.321739  2.0   0.457731  0.662203
+C(C_Row_Group_Size)     75.074517  2.0   4.693409  0.089282
+C(D_Threads)            18.680558  2.0   1.167846  0.398595
+C(E_Index_Strategy)     38.537715  2.0   2.409250  0.205746
+C(F_Compression)        72.888521  2.0   4.556748  0.093043
+C(G_Key_Distribution)   11.776810  2.0   0.736247  0.534256
+Residual                31.991467  4.0        NaN       NaN
+
+  Post-hoc Tukey HSD for latency_ms_sn (alpha=0.05)
+    ... Significant factor: A_Storage_Mode
+    Multiple Comparison of Means - Tukey HSD, FWER=0.05     
+============================================================
+   group1     group2 meandiff p-adj   lower    upper  reject
+------------------------------------------------------------
+Materialized Parquet  -6.6049 0.0024 -10.4865 -2.7233   True
+------------------------------------------------------------
+
+--- Analysis for Workload: join ---
+
+  ANOVA for Response: latency_ms_sn (Higher is better)
+                           sum_sq   df           F    PR(>F)
+C(A_Storage_Mode)        5.610898  1.0    5.559616  0.077842
+C(B_ID_Type)             4.359569  2.0    2.159862  0.231154
+C(C_Row_Group_Size)      1.843991  2.0    0.913569  0.471204
+C(D_Threads)             0.372634  2.0    0.184614  0.838128
+C(E_Index_Strategy)      4.013565  2.0    1.988441  0.251451
+C(F_Compression)         0.323992  2.0    0.160516  0.856930
+C(G_Key_Distribution)  264.760656  2.0  131.170416  0.000226
+Residual                 4.036896  4.0         NaN       NaN
+
+  Post-hoc Tukey HSD for latency_ms_sn (alpha=0.05)
+    ... Significant factor: G_Key_Distribution
+  Multiple Comparison of Means - Tukey HSD, FWER=0.05  
+=======================================================
+  group1   group2 meandiff p-adj  lower   upper  reject
+-------------------------------------------------------
+Empirical Uniform  10.4496   0.0   8.633 12.2661   True
+Empirical    Zipf  -0.8258 0.482 -2.6424  0.9907  False
+  Uniform    Zipf -11.2754   0.0 -13.092 -9.4588   True
+-------------------------------------------------------
+
+--- Analysis for Workload: point_lookup ---
+
+  ANOVA for Response: latency_ms_sn (Higher is better)
+                            sum_sq   df          F    PR(>F)
+C(A_Storage_Mode)      2631.457910  1.0  37.890811  0.003534
+C(B_ID_Type)            524.959590  2.0   3.779491  0.119751
+C(C_Row_Group_Size)     183.611205  2.0   1.321925  0.362477
+C(D_Threads)            264.300903  2.0   1.902857  0.262600
+C(E_Index_Strategy)     836.307939  2.0   6.021070  0.062172
+C(F_Compression)        318.095650  2.0   2.290157  0.217327
+C(G_Key_Distribution)   266.486150  2.0   1.918590  0.260496
+Residual                277.793777  4.0        NaN       NaN
+
+  Post-hoc Tukey HSD for latency_ms_sn (alpha=0.05)
+    ... Significant factor: A_Storage_Mode
+     Multiple Comparison of Means - Tukey HSD, FWER=0.05     
+=============================================================
+   group1     group2 meandiff p-adj   lower    upper   reject
+-------------------------------------------------------------
+Materialized Parquet  -24.182 0.0007 -36.3669 -11.9971   True
+-------------------------------------------------------------
+
+--- Analysis for Workload: range_query ---
+
+  ANOVA for Response: latency_ms_sn (Higher is better)
+                            sum_sq   df          F    PR(>F)
+C(A_Storage_Mode)       305.232659  1.0   8.175272  0.045965
+C(B_ID_Type)           2076.203997  2.0  27.804252  0.004503
+C(C_Row_Group_Size)     203.169574  2.0   2.720820  0.179484
+C(D_Threads)             15.288328  2.0   0.204739  0.822897
+C(E_Index_Strategy)      49.398690  2.0   0.661541  0.564669
+C(F_Compression)         98.142013  2.0   1.314305  0.364146
+C(G_Key_Distribution)    54.813787  2.0   0.734059  0.535111
+Residual                149.344349  4.0        NaN       NaN
+
+  Post-hoc Tukey HSD for latency_ms_sn (alpha=0.05)
+    ... Significant factor: A_Storage_Mode
+    Multiple Comparison of Means - Tukey HSD, FWER=0.05    
+===========================================================
+   group1     group2 meandiff p-adj   lower   upper  reject
+-----------------------------------------------------------
+Materialized Parquet  -8.2359 0.1902 -20.9968 4.5251  False
+-----------------------------------------------------------
+    ... Significant factor: B_ID_Type
+       Multiple Comparison of Means - Tukey HSD, FWER=0.05        
+==================================================================
+      group1       group2 meandiff p-adj   lower    upper   reject
+------------------------------------------------------------------
+Sequential_INTEGER UUIDv4 -25.9603 0.0001 -37.1691 -14.7516   True
+Sequential_INTEGER UUIDv7  -9.2928 0.1125 -20.5015    1.916  False
+            UUIDv4 UUIDv7  16.6675 0.0041   5.4588  27.8763   True
+------------------------------------------------------------------
+
+--- Analysis for Workload: window ---
+
+  ANOVA for Response: latency_ms_sn (Higher is better)
+                          sum_sq   df          F    PR(>F)
+C(A_Storage_Mode)       1.582045  1.0   3.737580  0.125341
+C(B_ID_Type)           65.066713  2.0  76.860027  0.000643
+C(C_Row_Group_Size)     8.183907  2.0   9.667237  0.029385
+C(D_Threads)            8.768183  2.0  10.357412  0.026194
+C(E_Index_Strategy)     2.314457  2.0   2.733951  0.178489
+C(F_Compression)        6.592887  2.0   7.787845  0.041753
+C(G_Key_Distribution)   1.666789  2.0   1.968894  0.253934
+Residual                1.693122  4.0        NaN       NaN
+
+  Post-hoc Tukey HSD for latency_ms_sn (alpha=0.05)
+    ... Significant factor: B_ID_Type
+      Multiple Comparison of Means - Tukey HSD, FWER=0.05       
+================================================================
+      group1       group2 meandiff p-adj   lower   upper  reject
+----------------------------------------------------------------
+Sequential_INTEGER UUIDv4  -4.2457 0.0001 -6.1788 -2.3127   True
+Sequential_INTEGER UUIDv7  -3.7803 0.0004 -5.7133 -1.8472   True
+            UUIDv4 UUIDv7   0.4654 0.8086 -1.4676  2.3985  False
+----------------------------------------------------------------
+    ... Significant factor: C_Row_Group_Size
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+===================================================
+group1 group2 meandiff p-adj   lower  upper  reject
+---------------------------------------------------
+ 32000 128000  -0.1046 0.9967 -3.6209 3.4116  False
+ 32000 512000  -1.4208 0.5584 -4.9371 2.0954  False
+128000 512000  -1.3162 0.6048 -4.8324 2.2001  False
+---------------------------------------------------
+    ... Significant factor: D_Threads
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+===================================================
+group1 group2 meandiff p-adj   lower  upper  reject
+---------------------------------------------------
+     1      4   0.5537 0.9159 -3.0391 4.1465  False
+     1      8  -0.5855 0.9066 -4.1783 3.0073  False
+     4      8  -1.1392 0.6946  -4.732 2.4536  False
+---------------------------------------------------
+    ... Significant factor: F_Compression
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+===================================================
+group1 group2 meandiff p-adj   lower  upper  reject
+---------------------------------------------------
+  None Snappy   0.2273 0.9856 -3.4114 3.8659  False
+  None   ZSTD  -0.5046 0.9313 -4.1432 3.1341  False
+Snappy   ZSTD  -0.7318 0.8617 -4.3705 2.9068  False
+---------------------------------------------------
