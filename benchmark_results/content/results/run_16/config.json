@@ -1,0 +1,10 @@
+{
+  "run_id": 16,
+  "A_Storage_Mode": "Materialized",
+  "B_ID_Type": "UUIDv7",
+  "C_Row_Group_Size": 32000,
+  "D_Threads": 4,
+  "E_Index_Strategy": "No_Index",
+  "F_Compression": "ZSTD",
+  "G_Key_Distribution": "Empirical"
+}

@@ -1,0 +1,10 @@
+{
+  "run_id": 11,
+  "A_Storage_Mode": "Materialized",
+  "B_ID_Type": "Sequential_INTEGER",
+  "C_Row_Group_Size": 128000,
+  "D_Threads": 1,
+  "E_Index_Strategy": "No_Index",
+  "F_Compression": "None",
+  "G_Key_Distribution": "Zipf"
+}

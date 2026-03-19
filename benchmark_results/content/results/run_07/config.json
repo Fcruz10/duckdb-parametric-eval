@@ -1,0 +1,10 @@
+{
+  "run_id": 7,
+  "A_Storage_Mode": "Parquet",
+  "B_ID_Type": "UUIDv7",
+  "C_Row_Group_Size": 32000,
+  "D_Threads": 8,
+  "E_Index_Strategy": "Index_On_Load",
+  "F_Compression": "None",
+  "G_Key_Distribution": "Zipf"
+}

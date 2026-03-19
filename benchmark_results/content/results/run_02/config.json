@@ -1,0 +1,10 @@
+{
+  "run_id": 2,
+  "A_Storage_Mode": "Parquet",
+  "B_ID_Type": "Sequential_INTEGER",
+  "C_Row_Group_Size": 128000,
+  "D_Threads": 4,
+  "E_Index_Strategy": "Index_On_Load",
+  "F_Compression": "ZSTD",
+  "G_Key_Distribution": "Zipf"
+}

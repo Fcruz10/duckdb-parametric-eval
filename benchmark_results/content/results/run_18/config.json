@@ -1,0 +1,10 @@
+{
+  "run_id": 18,
+  "A_Storage_Mode": "Materialized",
+  "B_ID_Type": "UUIDv7",
+  "C_Row_Group_Size": 512000,
+  "D_Threads": 1,
+  "E_Index_Strategy": "Index_On_Demand",
+  "F_Compression": "Snappy",
+  "G_Key_Distribution": "Zipf"
+}
