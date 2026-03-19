@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Python-3.x-blue" alt="Python">
+  <img src="https://img.shields.io/badge/Python-3.14.2-blue" alt="Python">
   <img src="https://img.shields.io/badge/Jupyter-Notebook-orange" alt="Jupyter Notebook">
   <img src="https://img.shields.io/badge/DuckDB-Benchmark-yellow" alt="DuckDB">
   <img src="https://img.shields.io/badge/Design-Taguchi%20L18-success" alt="Taguchi L18">
@@ -14,14 +14,17 @@
 </p>
 
 <p align="center">
-  <a href="2026_DuckDBEvaluation_Article.pdf">Paper</a> &nbsp;|&nbsp;
-  <a href="#overview">Overview</a> &nbsp;|&nbsp;
-  <a href="#quick-start">Quick Start</a> &nbsp;|&nbsp;
-  <a href="#methodology">Methodology</a> &nbsp;|&nbsp;
-  <a href="#repository-structure">Repository Structure</a> &nbsp;|&nbsp;
-  <a href="#results-summary">Results Summary</a> &nbsp;|&nbsp;
-  <a href="#reproducibility">Reproducibility</a> &nbsp;|&nbsp;
-  <a href="#citation">Citation</a>
+  <a href="2026_DuckDBEvaluation_Article.pdf">Paper</a> &nbsp;|&nbsp;
+  <a href="#overview">Overview</a> &nbsp;|&nbsp;
+  <a href="#quick-start">Quick Start</a> &nbsp;|&nbsp;
+  <a href="#methodology">Methodology</a>
+</p>
+
+<p align="center">
+  <a href="#repository-structure">Repository Structure</a> &nbsp;|&nbsp;
+  <a href="#results-summary">Results Summary</a> &nbsp;|&nbsp;
+  <a href="#reproducibility">Reproducibility</a> &nbsp;|&nbsp;
+  <a href="#citation">Citation</a>
 </p>
 
 <p align="center">
