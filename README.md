@@ -37,7 +37,7 @@ Experimental workflow of the DuckDB benchmark, from Taguchi L18 design and deter
 </em></p>
 
 <p align="center">
-  <img src="assets/anova_pvalues_heatmap_clean.png" width="850" alt="ANOVA Heatmap" />
+  <img src="assets/anova_pvalues_heatmap.png" width="850" alt="ANOVA Heatmap" />
 </p>
 
 <p align="center"><em>
@@ -235,7 +235,7 @@ A recommended repository layout is:
 │               └── metrics.csv
 └── assets/
     ├── overview.png
-    ├── anova_pvalues_heatmap_clean.png
+    ├── anova_pvalues_heatmap.png
     ├── baseline_vs_optimal_latency_linear.png
     └── improvement_percentage_by_workload.png
 ```
