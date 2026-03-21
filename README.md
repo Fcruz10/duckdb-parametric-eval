@@ -17,12 +17,13 @@
   <a href="2026_DuckDBEvaluation_Article.pdf">Paper</a> &nbsp;|&nbsp;
   <a href="#overview">Overview</a> &nbsp;|&nbsp;
   <a href="#quick-start">Quick Start</a> &nbsp;|&nbsp;
-  <a href="#methodology">Methodology</a>
+  <a href="#methodology">Methodology</a> &nbsp;|&nbsp;
+  <a href="#experimental-runs">Experimental Runs</a>
 </p>
 
 <p align="center">
-  <a href="#repository-structure">Repository Structure</a> &nbsp;|&nbsp;
   <a href="#results-summary">Results Summary</a> &nbsp;|&nbsp;
+  <a href="#repository-structure">Repository Structure</a> &nbsp;|&nbsp;
   <a href="#reproducibility">Reproducibility</a> &nbsp;|&nbsp;
   <a href="#citation">Citation</a>
 </p>
@@ -32,8 +33,33 @@
 </p>
 
 <p align="center"><em>
-Experimental workflow of the DuckDB parametric benchmark, from synthetic dataset generation and Taguchi L18 design to workload execution, result collection, and statistical analysis.
+Experimental workflow of the DuckDB benchmark, from Taguchi L18 design and deterministic dataset generation to workload execution, metric collection, and statistical analysis.
 </em></p>
+
+<p align="center">
+  <img src="assets/anova_pvalues_heatmap_clean.png" width="850" alt="ANOVA Heatmap" />
+</p>
+
+<p align="center"><em>
+Heatmap of ANOVA p-values across workloads and experimental factors.
+</em></p>
+
+<p align="center">
+  <img src="assets/baseline_vs_optimal_latency_linear.png" width="850" alt="Baseline vs Optimal Latency" />
+</p>
+
+<p align="center"><em>
+Baseline versus workload-specific optimal latency in the confirmation experiments.
+</em></p>
+
+<p align="center">
+  <img src="assets/improvement_percentage_by_workload.png" width="850" alt="Improvement Percentage by Workload" />
+</p>
+
+<p align="center"><em>
+Relative latency improvement of the workload-specific optimal configuration over the shared baseline.
+</em></p>
+
 
 </div>
 
@@ -41,11 +67,11 @@ Experimental workflow of the DuckDB parametric benchmark, from synthetic dataset
 
 ## Overview
 
-This repository accompanies the paper **"Experimental Evaluation of DuckDB Performance under Parametric Optimization Scenarios"** and contains the benchmark implementation, experiment outputs, and reproducibility materials used in the study.
+This repository accompanies the paper **"Experimental Evaluation of DuckDB Performance under Parametric Optimization Scenarios"** and contains the benchmark implementation, experiment outputs, figures, and reproducibility materials used in the study.
 
-The main goal of this work is to evaluate how DuckDB configuration parameters affect analytical query performance under controlled conditions. The study adopts a **Taguchi L18 fractional factorial design** to explore the effect of multiple system-level factors while keeping the number of experimental runs manageable.
+The goal of this work is to evaluate how DuckDB configuration parameters affect analytical query performance under controlled conditions. The study adopts a **Taguchi L18 fractional factorial array** to explore to explore seven configuration factors while keeping the number of experimental runs manageable.
 
-The benchmark focuses on seven factors:
+The benchmark focuses on the following factors:
 
 1. **Storage Mode**: Parquet vs. Materialized  
 2. **ID Type**: Sequential Integer, UUIDv4, UUIDv7  
@@ -63,7 +89,9 @@ The evaluation covers five representative SQL workloads:
 - **Join**
 - **Window Function**
 
-This repository is intended for **academic evaluation, transparency, and reproducibility**, allowing reviewers to inspect the benchmark workflow, per-run configurations, generated metrics, and statistical outputs.
+Performance is assessed through **latency**, **CPU time**, **memory consumption**, and **row-group pruning efficiency**, followed by **signal-to-noise analysis**, **ANOVA**, and **Tukey HSD** post-hoc testing.
+
+This repository is intended for **academic evaluation, transparency, and reproducibility**, allowing reviewers to inspect the benchmark workflow, per-run configurations, generated metrics, figures, and statistical outputs.
 
 ---
 
@@ -206,7 +234,10 @@ A recommended repository layout is:
 │               ├── config.json
 │               └── metrics.csv
 └── assets/
-    └── overview.png
+    ├── overview.png
+    ├── anova_pvalues_heatmap_clean.png
+    ├── baseline_vs_optimal_latency_linear.png
+    └── improvement_percentage_by_workload.png
 ```
 
 ### Main files
@@ -229,7 +260,7 @@ A recommended repository layout is:
 
 The benchmark is executed across **18 runs**, as defined by the Taguchi L18 design.
 
-The execution log confirms the progression through **Run 1** to **Run 18**, with each configuration evaluating the same five workload categories. The repository also includes example per-run outputs such as `config.json` and `metrics.csv`.
+The execution log confirms the progression through **Run 1** to **Run 18**, with each configuration evaluating the same five workload categories. The repository also includes per-run outputs such as `config.json` and `metrics.csv`.
 
 For example, **Run 1** uses the following baseline configuration:
 
@@ -249,15 +280,16 @@ This configuration is used in the paper as the baseline for the confirmation exp
 
 The results show that DuckDB performance is **workload-dependent** and that there is **no single globally optimal configuration** across all query profiles.
 
-The paper and execution outputs indicate the following main patterns:
+The main findings reported in the paper are:
 
-* **Aggregation** is strongly affected by **Storage Mode**, with materialized storage outperforming direct Parquet scanning.
-* **Join** is strongly affected by **Key Distribution**, with **Uniform** distributions outperforming both Zipf and Empirical distributions.
-* **Point Lookup** is highly sensitive to **Storage Mode**, and indexing also has measurable influence.
-* **Range Query** shows sensitivity to configuration choices depending on the analysis output considered.
-* **Window Function** is strongly affected by **ID Type**, with **Sequential Integer** identifiers outperforming UUID-based alternatives.
+- **Aggregation** is primarily affected by **Storage Mode**, with **Materialized** storage outperforming direct Parquet scanning.
+- **Join** is primarily affected by **Key Distribution**, with **Uniform** distributions outperforming both Zipf and Empirical distributions.
+- **Point Lookup** is primarily affected by **Storage Mode**, with materialized storage substantially reducing latency.
+- **Range Query** shows statistically significant effects for **Storage Mode** and **ID Type**, with clearer pairwise separation for **ID Type** in the post-hoc analysis.
+- **Window Function** is the most configuration-sensitive workload in the ANOVA, with significant effects for **ID Type**, **Row-Group Size**, **Threads**, and **Compression**; however, pairwise Tukey separation is strongest for **ID Type**.
 
-The confirmation experiments reported in the paper compare the shared baseline configuration against workload-specific optimal configurations:
+
+The confirmation experiments compare the shared baseline configuration against workload-specific optimal configurations:
 
 | Workload        | Baseline (ms) | Optimal (ms) | Improvement |
 | :-------------- | ------------: | -----------: | ----------: |
@@ -267,7 +299,7 @@ The confirmation experiments reported in the paper compare the shared baseline c
 | Join            |        565.62 |       453.81 |     +19.77% |
 | Window Function |        897.97 |       941.18 |      -4.81% |
 
-These results suggest that targeted tuning can substantially improve retrieval and aggregation workloads, while more complex analytical patterns may involve interactions that are not fully captured by the L18 design.
+These results indicate that targeted configuration tuning can produce substantial gains for retrieval and aggregation workloads, while more complex analytical patterns may involve effects that are not fully captured by the reduced L18 screening design.
 
 ---
 
@@ -315,11 +347,11 @@ This repository was prepared to support **transparent academic review**.
 
 In particular, it allows evaluators to:
 
-* inspect the benchmark design,
-* verify the configuration factors and levels,
-* review per-run outputs,
-* examine the final statistical analysis,
-* and compare the repository contents with the conclusions reported in the paper.
+* Inspect the benchmark design,
+* Verify the configuration factors and levels,
+* Review per-run outputs,
+* Examine the final statistical analysis,
+* Compare the repository contents with the conclusions reported in the paper.
 
 ---
 
