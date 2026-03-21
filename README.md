@@ -36,31 +36,6 @@
 Experimental workflow of the DuckDB benchmark, from Taguchi L18 design and deterministic dataset generation to workload execution, metric collection, and statistical analysis.
 </em></p>
 
-<p align="center">
-  <img src="assets/anova_pvalues_heatmap.png" width="850" alt="ANOVA Heatmap" />
-</p>
-
-<p align="center"><em>
-Heatmap of ANOVA p-values across workloads and experimental factors.
-</em></p>
-
-<p align="center">
-  <img src="assets/baseline_vs_optimal_latency_linear.png" width="850" alt="Baseline vs Optimal Latency" />
-</p>
-
-<p align="center"><em>
-Baseline versus workload-specific optimal latency in the confirmation experiments.
-</em></p>
-
-<p align="center">
-  <img src="assets/improvement_percentage_by_workload.png" width="850" alt="Improvement Percentage by Workload" />
-</p>
-
-<p align="center"><em>
-Relative latency improvement of the workload-specific optimal configuration over the shared baseline.
-</em></p>
-
-
 </div>
 
 ---
@@ -280,6 +255,13 @@ This configuration is used in the paper as the baseline for the confirmation exp
 
 The results show that DuckDB performance is **workload-dependent** and that there is **no single globally optimal configuration** across all query profiles.
 
+<p align="center">
+  <img src="assets/anova_pvalues_heatmap.png" width="850" alt="ANOVA Heatmap" />
+</p>
+<p align="center"><em>
+Heatmap of ANOVA p-values across workloads and experimental factors.
+</em></p>
+
 The main findings reported in the paper are:
 
 - **Aggregation** is primarily affected by **Storage Mode**, with **Materialized** storage outperforming direct Parquet scanning.
@@ -298,6 +280,24 @@ The confirmation experiments compare the shared baseline configuration against w
 | Aggregation     |         19.92 |         9.57 |     +51.97% |
 | Join            |        565.62 |       453.81 |     +19.77% |
 | Window Function |        897.97 |       941.18 |      -4.81% |
+
+
+<p align="center">
+  <img src="assets/baseline_vs_optimal_latency_linear.png" width="850" alt="Baseline vs Optimal Latency" />
+</p>
+
+<p align="center"><em>
+Baseline versus workload-specific optimal latency in the confirmation experiments.
+</em></p>
+
+<p align="center">
+  <img src="assets/improvement_percentage_by_workload.png" width="850" alt="Improvement Percentage by Workload" />
+</p>
+
+<p align="center"><em>
+Relative latency improvement of the workload-specific optimal configuration over the shared baseline.
+</em></p>
+
 
 These results indicate that targeted configuration tuning can produce substantial gains for retrieval and aggregation workloads, while more complex analytical patterns may involve effects that are not fully captured by the reduced L18 screening design.
 
