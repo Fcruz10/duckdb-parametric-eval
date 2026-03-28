@@ -18,6 +18,7 @@ authors:
     orcid: "https://orcid.org/0000-0003-0010-4777"
 title: "duckdb-parametric-eval"
 version: 1.0.0
+doi: "10.5281/zenodo.19301087"
 date-released: 2026-03-28
 repository-code: "https://github.com/Fcruz10/duckdb-parametric-eval"
 url: "https://github.com/Fcruz10/duckdb-parametric-eval"
