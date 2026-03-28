@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: "Cruz"
+    given-names: "Francisco"
+    orcid: "https://orcid.org/0009-0006-6832-509X"
+  - family-names: "Silva"
+    given-names: "Diogo B."
+    orcid: "https://orcid.org/0009-0001-2662-7456"
+  - family-names: "Borges"
+    given-names: "Rui"
+    orcid: "https://orcid.org/0009-0007-6276-7177"
+  - family-names: "Oliveira"
+    given-names: "Pedro Filipe"
+    orcid: "https://orcid.org/0000-0002-2848-1606"
+  - family-names: "Matos"
+    given-names: "Paulo"
+    orcid: "https://orcid.org/0000-0003-0010-4777"
+title: "duckdb-parametric-eval"
+version: 1.0.0
+date-released: 2026-03-28
+repository-code: "https://github.com/Fcruz10/duckdb-parametric-eval"
+url: "https://github.com/Fcruz10/duckdb-parametric-eval"
+license: "MIT"
