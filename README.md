@@ -11,6 +11,9 @@
   <img src="https://img.shields.io/badge/DuckDB-Benchmark-yellow" alt="DuckDB">
   <img src="https://img.shields.io/badge/Design-Taguchi%20L18-success" alt="Taguchi L18">
   <img src="https://img.shields.io/badge/Status-Academic%20Repository-lightgrey" alt="Academic Repository">
+  <a href="https://doi.org/10.5281/zenodo.19301087">
+    <img src="https://img.shields.io/badge/DOI-10.5281%2Fzenodo.19301087-blue" alt="DOI">
+  </a>
 </p>
 
 <p align="center">
