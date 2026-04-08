@@ -362,7 +362,7 @@ In particular, it allows evaluators to:
 
 If you use this repository or refer to this work, please cite:
 
-**DOI:** [10.5281/zenodo.19301087](https://doi.org/10.5281/zenodo.19301087)
+**DOI:** [10.5281/zenodo.19301086](https://doi.org/10.5281/zenodo.19301086)
 
 ```bibtex
 @article{cruz2026duckdbeval,
@@ -370,7 +370,7 @@ If you use this repository or refer to this work, please cite:
   author      = {Cruz, Francisco and Silva, Diogo and Borges, Rui and Matos, Paulo and Oliveira, Pedro},
   year        = {2026},
   institution = {Instituto Politécnico de Bragança},
-  doi         = {10.5281/zenodo.19301087},
+  doi         = {10.5281/zenodo.19301086},
   note        = {Code, benchmark outputs and reproducibility materials available on GitHub}
 }
 ```
